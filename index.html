@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shimmer闪光效果</title>
+    <style type="text/css">
+      html,
+      body {
+        width: 100%;
+      }
+
+      .big-con {
+        background-color: #dddddd;
+        width: 350px;
+        height: 140px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      .small-con {
+        background-color: #dddddd;
+        width: 150px;
+        height: 110px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+
+      .text-con-long {
+        background-color: #dddddd;
+        width: 300px;
+        height: 20px;
+        margin: 10px 0px 10px 10px;
+      }
+
+      .text-con-short {
+        background-color: #dddddd;
+        width: 150px;
+        height: 20px;
+        margin: 10px 0px 10px 10px;
+      }
+
+      .text-con-tiny {
+        background-color: #dddddd;
+        width: 50px;
+        height: 20px;
+        margin: 10px 0px 10px 10px;
+      }
+
+      .circle-icon {
+        background-color: #dddddd;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 10px;
+      }
+
+      .flex-con {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .skeleton {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .skeleton:before {
+        content: "";
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        overflow: hidden;
+        background: -moz-linear-gradient(
+          left,
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background: -webkit-linear-gradient(
+          left,
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background: -o-linear-gradient(
+          left,
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-10deg);
+        -webkit-transform: skewX(-10deg);
+        -moz-transform: skewX(-10deg);
+
+        animation: shimmer 1.5s linear infinite;
+        z-index: 10;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+
+        70% {
+          left: 100%;
+        }
+
+        100% {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="skeleton">
+      <div class="big-con"></div>
+      <div class="text-con-long"></div>
+      <div class="text-con-short"></div>
+    </div>
+    <div class="skeleton">
+      <div class="flex-con">
+        <div class="circle-icon"></div>
+        <div>
+          <div class="text-con-short"></div>
+          <div class="text-con-short"></div>
+          <div class="text-con-tiny"></div>
+        </div>
+      </div>
+      <div class="big-con"></div>
+      <div class="flex-con">
+        <div class="small-con"></div>
+        <div>
+          <div class="text-con-short"></div>
+          <div class="text-con-short"></div>
+          <div class="text-con-tiny"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

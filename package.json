@@ -1,0 +1,15 @@
+{
+  "name": "css3-shimmer",
+  "version": "1.0.0",
+  "description": "> 最新在探究减少前端白屏，希望给用户一个相对较好的loading提示页面，这时动画是不能用图片实现的",
+  "main": "index.js",
+  "scripts": {
+    "dev": "anywhere -f ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "anywhere": "^1.5.0"
+  }
+}
